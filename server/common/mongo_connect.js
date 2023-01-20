@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const USER_NAME = 'uc_her_stride';
 const PASSWORD = 'AYLe6Ef0blqKazni';
-const MONGO_CONNECTION_URI = `mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.moqd5yq.mongodb.net/?retryWrites=true&w=majority`;
+const DATABASE = 'uc_her_stride'
+const MONGO_CONNECTION_URI = `mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.moqd5yq.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
 
 const MongoDbConnect = async () => {
   try {
