@@ -19,7 +19,7 @@ Router.post('/getCategories', async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json('Server error');
+    res.status(500).json('Server error --> ' + err.message);
   }
 });
 
@@ -44,14 +44,59 @@ Router.post('/getCategoriesDetails', async (req, res) => {
         name: categoryDetails.name
       },
       providers: providers.map(provider => ({
-        id: providers._id,
-        name: providers.name,
+        id: provider._id,
+        name: provider.name,
         rating: provider.rating
       }))
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json('Server error');
+    res.status(500).json('Server error --> ' + err.message);
+  }
+});
+
+/**
+ curl --location --request POST 'http://localhost:3001/api/addCategory' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+    "categoryKey": "salon",
+    "categoryName": "Salon At Home"
+ }'
+ */
+Router.post('/addCategory', async (req, res) => {
+  try {
+    const { categoryKey, categoryName } = req.body;
+    await UCServiceDML.createCategory(categoryKey, categoryName);
+    
+    return res.json({
+      status: true
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json('Server error --> ' + err.message);
+  }
+});
+
+/**
+ curl --location --request POST 'http://localhost:3001/api/addProvider' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{
+    "categoryKey": "salon",
+    "providerName": "Edna Mode",
+    "providerRating": 4.5
+ }'
+ */
+Router.post('/addProvider', async (req, res) => {
+  try {
+    const { categoryKey, providerName, providerRating } = req.body;
+    await UCServiceDML.createProvider(providerName, providerRating, categoryKey);
+    
+    return res.json({
+      status: true
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json('Server error --> ' + err.message);
   }
 });
 
