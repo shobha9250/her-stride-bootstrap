@@ -4,7 +4,7 @@
   "description": "Her-Stride bootstrap project",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shashankch292/her-stride-bootstrap#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "4.18.2",
+    "mongoose": "5.10.11"
   }
 }
