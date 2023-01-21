@@ -1,6 +1,6 @@
 
 const GET_CATEGORIES_API_CONFIG = {
-  url: "/sampleapi",
+  url: "/api/getCategories",
   method: "POST",
   body: {}
 };
@@ -14,40 +14,45 @@ const CATEGORY_KEY_TO_IMAGE_MAP = {
 };
 
 const getCategoryList = async () => {
-  // // show loader
-  // const fetchRes = await fetch(GET_CATEGORIES_API_CONFIG.url, {
-  //   method: GET_CATEGORIES_API_CONFIG.method,
-  //   body: GET_CATEGORIES_API_CONFIG.body,
-  // });
-  // const data = await fetchRes.json();
-
-  // // hide loader
-  // console.log("data", data);
-
-  return ({
-    categories: [
-      {
-        name: "Women's salon",
-        key: "salon_at_home",
-      },
-      {
-        name: "Electricians",
-        key: "electricians",
-      },
-      {
-        name: "Spa at home",
-        key: "spa_at_home",
-      },
-      {
-        name: "Carpenters",
-        key: "carpenters",
-      },
-      {
-        name: "Men's grooming",
-        key: "mens_grooming",
-      },
-    ],
+  // show loader
+  const fetchRes = await fetch(GET_CATEGORIES_API_CONFIG.url, {
+    method: GET_CATEGORIES_API_CONFIG.method,
+    body: GET_CATEGORIES_API_CONFIG.body,
+    headers: {
+      'Content-Type': 'application/json'
+    },
   });
+  const data = await fetchRes.json();
+
+  // hide loader
+  console.log("data", data);
+
+  return data;
+
+  // return ({
+  //   categories: [
+  //     {
+  //       name: "Women's salon",
+  //       key: "salon_at_home",
+  //     },
+  //     {
+  //       name: "Electricians",
+  //       key: "electricians",
+  //     },
+  //     {
+  //       name: "Spa at home",
+  //       key: "spa_at_home",
+  //     },
+  //     {
+  //       name: "Carpenters",
+  //       key: "carpenters",
+  //     },
+  //     {
+  //       name: "Men's grooming",
+  //       key: "mens_grooming",
+  //     },
+  //   ],
+  // });
 };
 
 const renderPage = (pageLoadData) => {

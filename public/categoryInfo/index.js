@@ -1,6 +1,6 @@
 
 const GET_CATEGORY_INFO_API_CONFIG = {
-  url: "/sampleapi",
+  url: "/api/getCategoriesDetails",
   method: "POST",
   body: {
     categoryKey: location.pathname.split("/")[2],
@@ -16,40 +16,45 @@ const CATEGORY_KEY_TO_IMAGE_MAP = {
 };
 
 const getCategoryInfo = async () => {
-  // // show loader
-  // const fetchRes = await fetch(GET_CATEGORY_INFO_API_CONFIG.url, {
-  //   method: GET_CATEGORY_INFO_API_CONFIG.method,
-  //   body: GET_CATEGORY_INFO_API_CONFIG.body,
-  // });
-  // const data = await fetchRes.json();
-
-  // // hide loader
-  // console.log("data", data);
-
-  return ({
-    category: {
-      name: "Women's salon",
-      key: "salon_at_home"
+  // show loader
+  const fetchRes = await fetch(GET_CATEGORY_INFO_API_CONFIG.url, {
+    method: GET_CATEGORY_INFO_API_CONFIG.method,
+    body: JSON.stringify(GET_CATEGORY_INFO_API_CONFIG.body),
+    headers: {
+      'Content-Type': 'application/json'
     },
-    providers: [
-      {
-        name: "Pro name 1",
-        rating: "4.2"
-      },
-      {
-        name: "Pro name 2",
-        rating: "4.1"
-      },
-      {
-        name: "Pro name 3",
-        rating: "4.3"
-      },
-      {
-        name: "Pro name 4",
-        rating: "4.5"
-      },
-    ],
   });
+  const data = await fetchRes.json();
+
+  // hide loader
+  console.log("data", data);
+
+  return data;
+
+  // return ({
+  //   category: {
+  //     name: "Women's salon",
+  //     key: "salon_at_home"
+  //   },
+  //   providers: [
+  //     {
+  //       name: "Pro name 1",
+  //       rating: "4.2"
+  //     },
+  //     {
+  //       name: "Pro name 2",
+  //       rating: "4.1"
+  //     },
+  //     {
+  //       name: "Pro name 3",
+  //       rating: "4.3"
+  //     },
+  //     {
+  //       name: "Pro name 4",
+  //       rating: "4.5"
+  //     },
+  //   ],
+  // });
 };
 
 const renderPage = (pageLoadData) => {
