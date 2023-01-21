@@ -1,1 +1,82 @@
-<!-- hello world -->
+<html>
+  <head>
+    <link rel="stylesheet" href="index.styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          disableForReducedMotion: true
+        });
+      }, 500);
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="headerLogoContainer">
+        <p>Smart services</p>
+      </div>
+      <!-- <div>
+        <ul class="headerLinksContainer">
+          <li>How it works</li>
+          <li>Services</li>
+          <li>About</li>
+        </ul>
+      </div> -->
+      <div class="loginContainer">
+        <p>Log in</p>
+      </div>
+    </header>
+
+    <div class="rootContainer">
+      <div class="h1Container">
+        <h1>
+          <span>A brand new way</span>
+          <span>to get things done</span>
+        </h1>
+      </div>
+
+      <div class="categoryGridContainer" id="categoryGridContainer">
+        <!-- <div class="categoryGridItem" onclick="openCategoryInfo('salon_at_home')">
+          <div class="categoryImageContainer">
+            <img src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/images/growth/home-screen/1609757635235-1a139e.png" />
+          </div>
+          <p>Women's Salon</p>
+        </div>
+
+        <div class="categoryGridItem">
+          <div class="categoryImageContainer">
+            <img src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/categories/category_v2/category_72d18950.png" />
+          </div>
+          <p>Electricias</p>
+        </div>
+
+        <div class="categoryGridItem">
+          <div class="categoryImageContainer">
+            <img src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/categories/category_v2/category_1312fb60.png" />
+          </div>
+          <p>Spa at home</p>
+        </div>
+
+        <div class="categoryGridItem">
+          <div class="categoryImageContainer">
+            <img src="https://res.cloudinary.com/urbanclap/image/upload/categories/category_v2/category_6fbad370.png" />
+          </div>
+          <p>Carpenters</p>
+        </div>
+
+        <div class="categoryGridItem">
+          <div class="categoryImageContainer">
+            <img src="https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/images/growth/home-screen/1609757629780-2b2187.png" />
+          </div>
+          <p>Men's grooming</p>
+        </div> -->
+
+      </div>
+    </div>
+  </body>
+
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,160 @@
+body, header, p, ul, li, div, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+header > .headerLogoContainer {
+  font-family: Copperplate, Arial !important;
+  font-weight: 600;
+  font-size: 32px;
+};
+
+.headingContainer {
+  font-size: 64px;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.headerLinksContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #0f0f0f;
+}
+
+.loginContainer > p {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #fff
+}
+
+.rootContainer {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+.categoryGridContainer {
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.categoryGridItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-bottom: 16px;
+}
+
+.categoryImageContainer > img {
+  width: 64px;
+  height: 64px;
+  object-fit: scale-down;
+}
+
+.categoryGridItem > p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin-left: 32px;
+}
+
+.proListContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proCardRoot {
+  padding: 16px 32px;
+  width: 800px;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px auto 0;
+}
+
+.proCardRoot:first-child {
+  margin-top: 0px;
+}
+
+.proImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-bottom: 16px;
+}
+
+.proImageContainer > img {
+  width: 64px;
+  height: 64px;
+  object-fit: scale-down;
+}
+
+.proInfoContainer {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.proInfoRoot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.proCardCTA {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  padding: 8px 16px;
+  color: #fff;
+  background-color: #0f0f0f;
+  border-radius: 5px;
+  cursor: pointer;
+}
