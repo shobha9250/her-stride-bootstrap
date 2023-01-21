@@ -17,7 +17,7 @@ const getCategoryList = async () => {
   // show loader
   const fetchRes = await fetch(GET_CATEGORIES_API_CONFIG.url, {
     method: GET_CATEGORIES_API_CONFIG.method,
-    body: GET_CATEGORIES_API_CONFIG.body,
+    body: JSON.stringify(GET_CATEGORIES_API_CONFIG.body),
     headers: {
       'Content-Type': 'application/json'
     },
